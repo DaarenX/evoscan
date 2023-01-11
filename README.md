@@ -34,7 +34,7 @@ python server.py
 ```
 
 - Die Webseite sollte man jetzt im Browser über `http://IP_ADRESSE_VOM_PI:5000` öffnen können
-´
+
 - Wenn ihr das auch auf dem Handy machen wollt müsst ihr euch nur mit dem Hotspot verbinden
 
 - Die Tags könnt ihr beschreiben indem ihr
