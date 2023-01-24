@@ -1,14 +1,20 @@
 import RPi.GPIO as GPIO
-from mfrc522 import SimpleMFRC522
+from mfrc522 import SimpleMFRC522, MFRC522
 from time import sleep
 from datetime import datetime, timedelta
-        
+
+
+class PatchedSimpleMFRC522(SimpleMFRC522):
+    def __init__(self, **kwargs):
+        self.READER = MFRC522(**kwargs)
+
+
 letzteID = None
 zeitpunkt = datetime(2000, 1, 1, 0, 0, 0)
 wartezeit = timedelta(seconds = 5)
 
-reader = SimpleMFRC522(bus=0, pin_rst=22)
-reader2 = SimpleMFRC522(bus=1, pin_rst=16)
+reader = PatchedSimpleMFRC522(bus=0, pin_rst=22)
+reader2 = PatchedSimpleMFRC522(bus=1, pin_rst=16)
 
 
 
